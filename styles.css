@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    height: max-content;
+}
+
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    /* background-color: #efefef; */
+    display: flex;
+    justify-content: center;
+}
+
+#nav-bar {
+    width: 100%;
+}
+
+#header-img {
+    height: 60px;
+}
+
+#nav-menus {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    /* justify-content:space-around; */
+    justify-content: center;
+}
+
+li {
+    list-style: none;
+}
+
+.nav-link {
+    color: rgb(184, 73, 73);
+    text-decoration: none;
+    margin: 0 50px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Jura', sans-serif;
+}
+
+.drop-down {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: rgb(0, 0, 0);
+    width: 100%;
+    height: 400px;
+    display: flex;
+    visibility: collapse;
+}
+
+.drop-down-img {
+    height: 100%;
+    width: 400px;
+    background: rgb(0, 0, 0);
+}
+
+.drop-link-img {
+    background-image: url('https://cdn.shopify.com/s/files/1/0586/3270/0077/files/EU_300x.jpg?v=1657563158');
+    /* height: 300px;
+    width: 200px; */
+    background-size: cover;
+    background-position: center;
+}
+
+.drop-down-wrapper {
+    padding: 10px 35px;
+}
+
+.drop-sections {
+    padding-top: 25px;
+}
+.drop-sections ul {
+    margin: 0;
+    padding-left: 0;
+}
+.drop-sections header {
+    color: rgb(147, 96, 212);
+    font-size: 1.3rem;
+    font-family: 'VT323', monospace;
+    margin-bottom: 5px;
+}
+
+.drop-links {
+    color: rgb(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-family: 'Press Start 2P', cursive;
+    margin: 10px 0;
+    /* transition: 0.1s; */
+}
+
+.hover {
+    color: rgb(255, 17, 0);
+    visibility: collapse;
+}
+
+.link-text {
+    margin-left: -12px;
+}
+
+.drop-links:hover {
+    & .hover {
+        visibility: visible;
+        margin-right: 20px;
+    }
+}
+.drop-links:hover .fa {
+    visibility: visible;
+}
+
+.hover-up-down{
+    margin-left: 8px;
+}
+
+
+/* Main section */
+
+#launch-img {
+    width: 70%;
+}
