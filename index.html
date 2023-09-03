@@ -18,7 +18,7 @@
 <body>
   <section class="loading">
     <div class="load-wheel"></div>
-</section>
+  </section>
   <header id="header">
     <nav id="nav-bar">
       <div class="brand">
@@ -29,9 +29,75 @@
         <a class="bigger" target="" href="#">&ltNOTHING/&gt</a>
       </div>
       <ul id="nav-menus">
-        <li id="drop-menu product-li">
-          <a class="nav-link product" onmouseover="drop_visible()" onmouseout="drop_hide()" onclick="return false"
+        <li>
+          <a class="nav-link product" onmouseenter="product_click()" onmousemove="drop_visible()" onmouseout="drop_hide()" onclick="return false"
             href="products.html">PRODUCTS<i class="fa fa-chevron-down fa-l hover-up-down"></i></a>
+        </li>
+        <li id="drop-li" class="drop-down" onmouseover="drop_visible()" onmouseout="drop_hide()">
+          <!-- <div> -->
+            <div class="drop-down-img">
+              <div class="drop-link-img"></div>
+            </div>
+            <div class="drop-down-wrapper">
+              <div class="drop-sections">
+                <header>PHONES</header>
+                <ul>
+                  <li><a href="https://in.nothing.tech/pages/phone-2" class="drop-links"
+                      onmousemove="product_img('phone-2')" onmouseout="product_img('default')"> <i
+                        class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">phone (2)</span> <span
+                        class="new-tag">NEW</span> </a></li>
+                  <li><a href="https://in.nothing.tech/pages/phone-1" class="drop-links"
+                      onmousemove="product_img('phone-1')" onmouseout="product_img('default')"> <i
+                        class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">phone (1)</span> </a></li>
+                </ul>
+              </div>
+              <div class="drop-sections">
+                <header>AUDIO</header>
+                <ul>
+                  <li><a target="_blank" href="https://in.nothing.tech/products/ear-2" class="drop-links"
+                      onmousemove="product_img('ear-2')" onmouseout="product_img('default')"><i
+                        class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">ear (2)</span> </a></li>
+                  <li><a target="_blank" href="https://in.nothing.tech/products/ear-stick" class="drop-links"
+                      onmousemove="product_img('ear-stick')" onmouseout="product_img('default')"><i
+                        class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">ear (stick)</span> </a></li>
+                </ul>
+              </div>
+              <div class="drop-sections">
+                <header>ACCESSORIES</header>
+                <ul>
+                  <li><a target="_blank" href="https://in.nothing.tech/products/phone-1-case" class="drop-links"
+                      onmousemove="product_img('phone-1-case')" onmouseout="product_img('default')"><i
+                        class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">phone (1) case</span> </a>
+                  </li>
+
+                  <li><a target="_blank" href="https://in.nothing.tech/products/phone-2-case" class="drop-links"
+                      onmousemove="product_img('phone-2-case')" onmouseout="product_img('default')"><i
+                        class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">phone (2) case</span> </a>
+                  </li>
+
+                  <li><a target="_blank" href="https://in.nothing.tech/products/phone-1-screen-protector"
+                      class="drop-links" onmousemove="product_img('1-screen-protector')"
+                      onmouseout="product_img('default')"><i class="fa fa-chevron-right fa-lg hover"></i><span
+                        class="link-text">phone (1) screen protector</span>
+                    </a></li>
+
+                  <li><a target="_blank" href="https://in.nothing.tech/products/phone-2-screen-protector"
+                      class="drop-links" onmousemove="product_img('2-screen-protector')"
+                      onmouseout="product_img('default')"><i class="fa fa-chevron-right fa-lg hover"></i><span
+                        class="link-text">phone (2) screen protector</span>
+                    </a></li>
+
+                  <li><a target="_blank" href="https://in.nothing.tech/products/phone-1-power" class="drop-links"
+                      onmousemove="product_img('power-45w')" onmouseout="product_img('default')"><i
+                        class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">power (45W)</span> </a></li>
+
+                  <li><a target="_blank" href="https://in.nothing.tech/products/cable" class="drop-links"
+                      onmousemove="product_img('cable-cc')" onmouseout="product_img('default')"><i
+                        class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">cable (C-C)</span> </a></li>
+                </ul>
+              </div>
+            </div>
+          <!-- </div> -->
         </li>
         <li><a class="nav-link" target="_blank" href="https://in.nothing.tech/pages/store">COLLECTION</a></li>
         <li><a class="nav-link" target="_blank" href="https://in.nothing.tech/pages/nothing-community">COMMUNITY</a>
@@ -40,7 +106,8 @@
         <li><a class="nav-link" target="_blank" href="https://in.nothing.tech">ORIGINAL</a></li>
       </ul>
       <div class="align-right">
-        <div class="login"><a href="https://in.nothing.tech/account/login"><img src="images/login-2.png" alt=""></a></div>
+        <div class="login"><a href="https://in.nothing.tech/account/login"><img src="images/login-2.png" alt=""></a>
+        </div>
         <div id="ham-icon" onclick="navResponse()">
           <div class="bars" id="bar-1"></div>
           <div class="bars" id="bar-2"></div>
@@ -49,67 +116,7 @@
 
       </div>
     </nav>
-    <div class="drop-down" onmouseover="drop_visible()" onmouseout="drop_hide()">
-      <div class="drop-down-img">
-        <div class="drop-link-img"></div>
-      </div>
-      <div class="drop-down-wrapper">
-        <div class="drop-sections">
-          <header>PHONES</header>
-          <ul>
-            <li><a href="https://in.nothing.tech/pages/phone-2" class="drop-links" onmousemove="product_img('phone-2')"
-                onmouseout="product_img('default')"> <i class="fa fa-chevron-right fa-lg hover"></i><span
-                  class="link-text">phone (2)</span> <span class="new-tag">NEW</span> </a></li>
-            <li><a href="https://in.nothing.tech/pages/phone-1" class="drop-links" onmousemove="product_img('phone-1')"
-                onmouseout="product_img('default')"> <i class="fa fa-chevron-right fa-lg hover"></i><span
-                  class="link-text">phone (1)</span> </a></li>
-          </ul>
-        </div>
-        <div class="drop-sections">
-          <header>AUDIO</header>
-          <ul>
-            <li><a target="_blank" href="https://in.nothing.tech/products/ear-2" class="drop-links"
-                onmousemove="product_img('ear-2')" onmouseout="product_img('default')"><i
-                  class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">ear (2)</span> </a></li>
-            <li><a target="_blank" href="https://in.nothing.tech/products/ear-stick" class="drop-links"
-                onmousemove="product_img('ear-stick')" onmouseout="product_img('default')"><i
-                  class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">ear (stick)</span> </a></li>
-          </ul>
-        </div>
-        <div class="drop-sections">
-          <header>ACCESSORIES</header>
-          <ul>
-            <li><a target="_blank" href="https://in.nothing.tech/products/phone-1-case" class="drop-links"
-                onmousemove="product_img('phone-1-case')" onmouseout="product_img('default')"><i
-                  class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">phone (1) case</span> </a>
-            </li>
 
-            <li><a target="_blank" href="https://in.nothing.tech/products/phone-2-case" class="drop-links"
-                onmousemove="product_img('phone-2-case')" onmouseout="product_img('default')"><i
-                  class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">phone (2) case</span> </a>
-            </li>
-
-            <li><a target="_blank" href="https://in.nothing.tech/products/phone-1-screen-protector" class="drop-links"
-                onmousemove="product_img('1-screen-protector')" onmouseout="product_img('default')"><i
-                  class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">phone (1) screen protector</span>
-              </a></li>
-
-            <li><a target="_blank" href="https://in.nothing.tech/products/phone-2-screen-protector" class="drop-links"
-                onmousemove="product_img('2-screen-protector')" onmouseout="product_img('default')"><i
-                  class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">phone (2) screen protector</span>
-              </a></li>
-
-            <li><a target="_blank" href="https://in.nothing.tech/products/phone-1-power" class="drop-links"
-                onmousemove="product_img('power-45w')" onmouseout="product_img('default')"><i
-                  class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">power (45W)</span> </a></li>
-
-            <li><a target="_blank" href="https://in.nothing.tech/products/cable" class="drop-links"
-                onmousemove="product_img('cable-cc')" onmouseout="product_img('default')"><i
-                  class="fa fa-chevron-right fa-lg hover"></i><span class="link-text">cable (C-C)</span> </a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
   </header>
   <main>
     <section class="main-section video-section">
