@@ -48,24 +48,38 @@ function navResponse() {
 var drop = document.getElementsByClassName('drop-down')[0];
 var navhead = document.getElementById('nav-bar');
 var arrow = document.getElementsByClassName('hover-up-down')[0];
-// console.log(arrow)
-var i = 0;
-function drop_visible() {
-    // console.log(i);
-    // drop.style.visibility = 'visible';
-    drop.style.top = '0px';
-    navhead.style.background = 'black';
-    arrow.style.transform = 'rotate(180deg)';
 
+function drop_visible() {
+    drop.style.top = '0px';
+    drop.style.display = 'flex'
+    navhead.style.background = 'black';
+    drop.style.visibility = 'visible';
+    arrow.style.transform = 'rotate(180deg)';
 }
 
 function drop_hide() {
-    // drop.style.visibility = 'collapse';
-    drop.style.top = '-999px';
-    navhead.style.background = 'rgba(255, 255, 255, 0.1)';
-    arrow.style.transform = 'rotate(0deg)';
-    // i -= 1; 
+    if(screen.width >= 1024)
+    {
+        drop.style.top = '-999px';
+        navhead.style.background = 'rgba(255, 255, 255, 0.1)';
+        arrow.style.transform = 'rotate(0deg)';
+    }
 
+}
+
+function product_click()
+{
+    console.log('clicked')
+    if(drop.style.display == 'none')
+    {
+        // console.log('first condition')
+        drop_visible();
+    }
+    else
+    {
+        drop.style.display = 'none';
+        // drop_hide();
+    }
 }
 
 function product_img(product) {
@@ -97,3 +111,5 @@ function product_img(product) {
         img.style.backgroundImage = "url('https://cdn.shopify.com/s/files/1/0586/3270/0077/files/26Image_1280x1020_fc93e97b-7f99-4709-9253-8330d7d1c8ac_1292x.png?v=1658151723')";
 
 }
+
+console.log(screen.width);
