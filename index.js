@@ -4,41 +4,37 @@ window.addEventListener("load", function () {
     load.style.visibility = "hidden"
 });
 
+
+let goToTop = document.getElementById('go-to-top');
+window.onscroll = function() {
+    scrollFunction()
+}
+;
+function scrollFunction() {
+    if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+        // goToTop.style.display = "block";
+        goToTop.style.visibility = "visible";
+    } else {
+        // goToTop.style.display = "none";
+        goToTop.style.visibility = "collapse";
+    }
+}
+
 var c = 0;
 function navResponse() {
     let nav_menus = document.getElementById('nav-menus');
     let ham_icon = document.getElementById('ham-icon');
     console.log(nav_menus);
-    // let links = document.getElementsByClassName('nav-link');
-    let links = document.querySelector('#nav-menus a');
-    var pos = 0;
     if (c % 2 === 0) {
-        // nav_menus.classList.add('icon-nav-menu');
-        // for (let index = 0; index < 4; index++) {
-        //     if(links[index].classList.contains('active-link'))
-        //         pos = index;
-        // }
-        // links[pos].classList.remove('active-link');
-        // ham_icon.style.position="fixed";
         ham_icon.classList.add('make-cross');
-        // nav_menus.style.visibility = "visible";
-        // nav_menus.style.position = 'absolute';
         nav_menus.style.top = '60px';
         nav_menus.style.left = '0';
         nav_menus.style.background = 'white';
         nav_menus.style.width = '100%';
         nav_menus.style.flexDirection = 'column';
-        // nav_menus.style.opacity = "1";
     }
     else {
-        // nav_menus.classList.remove('icon-nav-menu');
-        // nav_menus.style.opacity = "0"
-        // setTimeout(function(){
-        //     links[pos].classList.add('active-link');
-        // }, 350);
         nav_menus.style.top = '-999px';
-        // nav_menus.style.visibility = "hidden"
-        // ham_icon.style.position="absolute";
         ham_icon.classList.remove('make-cross');
     }
     c += 1;
@@ -113,3 +109,4 @@ function product_img(product) {
 }
 
 console.log(screen.width);
+console.log(window.scroll);
