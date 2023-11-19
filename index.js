@@ -4,13 +4,13 @@ window.addEventListener("load", function () {
     load.style.visibility = "hidden"
 });
 
-
-let goToTop = document.getElementById('go-to-top');
-window.onscroll = function() {
-    scrollFunction()
+window.onscroll = function () {
+    scrollFunction();
 }
-;
+
+// code for go to top button
 function scrollFunction() {
+    let goToTop = document.getElementById('go-to-top');
     if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
         // goToTop.style.display = "block";
         goToTop.style.visibility = "visible";
@@ -19,6 +19,31 @@ function scrollFunction() {
         goToTop.style.visibility = "collapse";
     }
 }
+
+// Code for navbar scrolling affects:
+
+// keep track of previous scroll position
+let prevScrollPos = window.pageYOffset;
+
+window.addEventListener('scroll', function () {
+    // current scroll position
+    const currentScrollPos = window.pageYOffset;
+    let header = document.querySelector('header');
+
+    if (prevScrollPos > currentScrollPos) {
+        // user has scrolled up
+        header.style.top = 0;
+        header.style.background = 'rgba(255, 255, 255, 0.9)';
+        header.style.backdropFilter = 'blur(10px)';
+    } else {
+        // user has scrolled down
+        header.style.top = '-55px';
+    }
+    if(currentScrollPos == 0)
+        header.style.background = 'transparent';
+    // update previous scroll position
+    prevScrollPos = currentScrollPos;
+});
 
 var c = 0;
 function navResponse() {
@@ -42,46 +67,35 @@ function navResponse() {
 
 
 var drop = document.getElementsByClassName('drop-down')[0];
-var navhead = document.getElementById('nav-bar');
 var arrow = document.getElementsByClassName('hover-up-down')[0];
 
 function drop_visible() {
     drop.style.top = '0px';
     drop.style.display = 'flex'
-    navhead.style.background = 'black';
     drop.style.visibility = 'visible';
     arrow.style.transform = 'rotate(180deg)';
 }
 
 function drop_hide() {
-    if(screen.width >= 1024)
-    {
+    if (screen.width >= 1024) {
         drop.style.top = '-999px';
-        navhead.style.background = 'rgba(255, 255, 255, 0.1)';
         arrow.style.transform = 'rotate(0deg)';
     }
 
 }
 
-function product_click()
-{
+function product_click() {
     console.log('clicked')
-    if(drop.style.display == 'none')
-    {
-        // console.log('first condition')
+    if (drop.style.display == 'none') {
         drop_visible();
     }
-    else
-    {
+    else {
         drop.style.display = 'none';
-        // drop_hide();
     }
 }
 
 function product_img(product) {
     var img = document.getElementsByClassName('drop-link-img')[0];
-    // img.style.height = '300px';
-    // img.style.width = '200px';
 
     if (product == 'phone-2')
         img.style.backgroundImage = "url('https://cdn.shopifycdn.net/s/files/1/0692/5988/6904/files/BA_ALAK_200.1001.png?v=1688611423')";
@@ -107,6 +121,3 @@ function product_img(product) {
         img.style.backgroundImage = "url('https://cdn.shopify.com/s/files/1/0586/3270/0077/files/26Image_1280x1020_fc93e97b-7f99-4709-9253-8330d7d1c8ac_1292x.png?v=1658151723')";
 
 }
-
-console.log(screen.width);
-console.log(window.scroll);
