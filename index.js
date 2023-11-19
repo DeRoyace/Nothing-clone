@@ -40,7 +40,10 @@ window.addEventListener('scroll', function () {
         header.style.top = '-55px';
     }
     if(currentScrollPos == 0)
+    {
         header.style.background = 'transparent';
+        header.style.backdropFilter = 'blur(0px)';
+    }
     // update previous scroll position
     prevScrollPos = currentScrollPos;
 });
